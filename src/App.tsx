@@ -5,6 +5,7 @@ import {
   CreditCard,
   DollarSign,
   Mail,
+  MapPin,
   Percent,
   Phone,
   Shield,
@@ -240,6 +241,17 @@ function App() {
                 <Phone className="w-5 h-5" />
                 <a href="tel:+19843829784" className="hover:text-blue-200 transition duration-300">
                   +1 (984) 382‑9784
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-5 h-5" />
+                <a 
+                  href="https://maps.google.com/?q=1130+Tenth+Ave,+San+Diego,+CA+92101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-200 transition duration-300"
+                >
+                  1130 Tenth Ave, San Diego, CA 92101
                 </a>
               </div>
               <button
