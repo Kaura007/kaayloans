@@ -7,10 +7,10 @@ import {
   Mail,
   MapPin,
   Percent,
-  Phone,
   Shield,
   ThumbsUp,
   Wallet,
+  MessageCircle,
 } from 'lucide-react';
 import TeamSection from './components/TeamSection';
 
@@ -84,6 +84,12 @@ function App() {
 
   const scrollToTeam = () => {
     document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleWhatsAppClick = (phoneNumber: string) => {
+    // Remove any non-numeric characters from the phone number
+    const cleanNumber = phoneNumber.replace(/\D/g, '');
+    window.open(`https://wa.me/${cleanNumber}`, '_blank');
   };
 
   return (
@@ -238,14 +244,20 @@ function App() {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5 text-green-400" />
                 <div className="flex flex-col items-end">
-                  <a href="tel:+19843829784" className="hover:text-blue-200 transition duration-300">
+                  <button 
+                    onClick={() => handleWhatsAppClick('19843829784')}
+                    className="hover:text-green-400 transition duration-300 text-left"
+                  >
                     +1 (984) 382‑9784
-                  </a>
-                  <a href="tel:+13465396305" className="hover:text-blue-200 transition duration-300">
+                  </button>
+                  <button 
+                    onClick={() => handleWhatsAppClick('13465396305')}
+                    className="hover:text-green-400 transition duration-300 text-left"
+                  >
                     +1 (346) 539‑6305
-                  </a>
+                  </button>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
